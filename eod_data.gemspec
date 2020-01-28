@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'eod_data/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'eod_data'
+  spec.name = 'eod_data_client'
   spec.version = EODData::VERSION
   spec.authors = ['Joseph Bridgwater-Rowe']
   spec.email = ['joe@westernmilling.com']

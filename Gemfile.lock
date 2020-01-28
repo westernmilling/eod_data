@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    eod_data (0.1.0)
+    eod_data_client (0.1.0)
       dotenv (= 2.7.5)
       gli (= 2.19.0)
       savon (= 2.12.0)
@@ -98,7 +98,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  eod_data!
+  eod_data_client!
   faker (= 2.10.1)
   rake (~> 10.0)
   rspec (~> 3.0)
