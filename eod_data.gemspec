@@ -5,6 +5,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'eod_data/version'
 
 Gem::Specification.new do |spec|
+  # Not eod_data because this already exists here...
+  # https://rubygems.org/gems/eod_data
   spec.name = 'eod_data_client'
   spec.version = EODData::VERSION
   spec.authors = ['Joseph Bridgwater-Rowe']
