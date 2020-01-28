@@ -1,3 +1,7 @@
+[![CircleCI](https://circleci.com/gh/westernmilling/eod_data.svg?style=svg&circle-token=a84f70c542ef4cacffe34d412933c62d4a9998b6)](https://circleci.com/gh/westernmilling/eod_data)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c2db47a62be7a8e73282/maintainability)](https://codeclimate.com/github/westernmilling/eod_data/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c2db47a62be7a8e73282/test_coverage)](https://codeclimate.com/github/westernmilling/eod_data/test_coverage)
+
 # EODData
 A basic and incomplete Ruby client library for the EODData Web Services.
 
