@@ -1,0 +1,28 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+  TargetRubyVersion: 2.5
+Lint/HandleExceptions:
+  Exclude:
+    - 'Rakefile'
+Metrics/AbcSize:
+  Exclude:
+Metrics/BlockLength:
+  Exclude:
+    - 'eod_data.gemspec'
+    - 'spec/**/*'
+Metrics/ClassLength:
+  Enabled: true
+Metrics/LineLength:
+  Exclude:
+Metrics/MethodLength:
+  Exclude:
+Naming/MemoizedInstanceVariableName:
+  Exclude:
+Style/AndOr:
+  EnforcedStyle: 'conditionals'
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+Style/SignalException:
+  EnforcedStyle: 'semantic'
