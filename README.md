@@ -20,15 +20,18 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
+EODData::Client.configure do |config|
+  config.symbol_price_uoms = {
+    ZC: 'Bushel'
+    ZM: 'Ton'
+  }
+end
+
 client = EODData::Client.new(
-  config.base_url = 'http://ws.eoddata.com/'
-    config.logger = Logger.new(STDOUT)
-    config.password = 'password'
-    config.symbol_price_uoms = {
-      ZC: 'Bushel'
-      ZM: 'Ton'
-    }
-    config.username = 'username'
+  base_url: 'http://ws.eoddata.com/',
+  logger: Logger.new(STDOUT),
+  password: 'password',
+  username: 'username'
 )
 
 quote = client.quote('CBOT', 'ZC')
