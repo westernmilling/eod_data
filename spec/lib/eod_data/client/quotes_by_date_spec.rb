@@ -21,8 +21,8 @@ RSpec.describe EODData::Client do
       it 'returns no quotes' do
         # Arrange
         EODData::Client.configure do |config|
-          config.symbol_price_uoms = {
-            ZC: 'Bushel'
+          config.price_conversion_class_names = {
+            ZC: 'BushelPrice'
           }
         end
 
