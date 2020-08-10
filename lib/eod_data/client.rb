@@ -8,9 +8,9 @@ module EODData
       attr_accessor :base_url,
                     :logger,
                     :password,
+                    :price_conversion_class_names,
                     :proxy_url,
                     :request_type,
-                    :symbol_price_uoms,
                     :username
 
       # ```ruby
@@ -18,9 +18,9 @@ module EODData
       #   config.base_url = 'http://localhost:3000'
       #   config.logger = Logger.new(STDOUT)
       #   config.password = 'password'
-      #   config.symbol_price_uoms = {
-      #     ZC: 'Bushel'
-      #     ZM: 'Ton'
+      #   config.price_conversion_class_names = {
+      #     ZC: 'OriginalPrice'
+      #     ZM: 'TonPrice'
       #   }
       #   config.username = 'username'
       # end
@@ -111,13 +111,23 @@ module EODData
       }
     end
 
-    class TonPrice # :nodoc:
+    class OriginalPrice # :nodoc:
       def initialize(price)
         @price = price
       end
 
       def call
         @price
+      end
+    end
+
+    class CentsPerPoundPrice # :nodoc:
+      def initialize(price)
+        @price = price
+      end
+
+      def call
+        @price.to_f / 100
       end
     end
 
@@ -151,7 +161,7 @@ module EODData
         @result_class ||= begin
           result_class_name = self.class.name.sub('Response', 'Result')
 
-          Object.const_get("EODData::Client::#{result_class_name}")
+          Object.const_get(result_class_name)
         end
       end
 
@@ -222,7 +232,7 @@ module EODData
         converter_klass = Object.const_get(
           [
             'EODData::Client',
-            "#{EODData::Client.symbol_price_uoms[symbol_symbol]}Price"
+            EODData::Client.price_conversion_class_names[symbol_symbol]
           ].join('::')
         )
 
