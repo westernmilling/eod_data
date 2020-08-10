@@ -8,7 +8,7 @@ module EODData
       attr_accessor :base_url,
                     :logger,
                     :password,
-                    :price_conversion_class_name,
+                    :price_conversion_class_names,
                     :proxy_url,
                     :request_type,
                     :username
